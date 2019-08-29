@@ -3,6 +3,7 @@ const Express = require("express");
 const Mongoose = require("mongoose");
 const BodyParser = require("body-parser");
 var app = Express();
+var port = process.env.PORT || 3000;
 
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
@@ -83,6 +84,6 @@ app.put("/person/:id", async (request, response) => {});
 app.delete("/person/:id", async (request, response) => {});
 app.use(Express.static('public'))
 
-app.listen(3000, () => {
-    console.log("Listening at :3000...");
+app.listen(port, () => {
+    console.log("Listening at "+port);
 });
