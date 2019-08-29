@@ -81,6 +81,7 @@ app.get("/person", async (request, response) => {});
 app.get("/person/:id", async (request, response) => {});
 app.put("/person/:id", async (request, response) => {});
 app.delete("/person/:id", async (request, response) => {});
+app.use(Express.static('public'))
 
 app.listen(3000, () => {
     console.log("Listening at :3000...");
